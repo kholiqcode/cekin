@@ -1,11 +1,23 @@
+import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StatusBar, StyleSheet} from 'react-native';
+import {Provider} from 'react-redux';
+import {PRIMARY} from './configs';
+import {store} from './libs';
+import Router from './routes';
 
 const App: React.FC<{title: string}> = ({children, title}) => {
   return (
-    <View style={{backgroundColor: 'red', flex: 1}}>
-      <Text>App</Text>
-    </View>
+    <Provider store={store}>
+      <NavigationContainer>
+        <Router />
+        <StatusBar
+          showHideTransition="slide"
+          barStyle="light-content"
+          backgroundColor={PRIMARY}
+        />
+      </NavigationContainer>
+    </Provider>
   );
 };
 

@@ -1,14 +1,16 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {Animated, Image, Text, View} from 'react-native';
+import {ILLogo} from '../../assets';
+import styles from './styles';
 
 const Splash = () => {
   return (
-    <View>
-      <Text>Splash</Text>
+    <View style={styles.container}>
+      <Image style={styles.imageAppLogo} source={ILLogo} />
+      <Animated.Text style={styles.textAppName}>CEKIN</Animated.Text>
+      <Text style={styles.textAppDesc}>COVID ELECTRONIC INFORMATION</Text>
     </View>
   );
 };
 
 export default Splash;
-
-const styles = StyleSheet.create({});
